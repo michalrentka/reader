@@ -76,6 +76,11 @@ window.clearTool = () => {
 	window._view.setTool();
 }
 
+window.selectResult = options => {
+	log("Select search result " + options.index);
+	window._view.find({ index: options.index });
+};
+
 window.updateAnnotations = (options) => {
 	const deletions = JSON.parse(decodeBase64(options.deletions));
 	const insertions = JSON.parse(decodeBase64(options.insertions));
